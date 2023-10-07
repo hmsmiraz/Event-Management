@@ -1,0 +1,66 @@
+[
+    {
+      "id": 1,
+      "title": "Wedding Festivities",
+      "img": "https://example.com/gala.jpg",
+      "details": "Join us for an elegant charity gala evening in support of a worthy cause.",
+      "price": 100.00
+    },
+    {
+      "id": 2,
+      "title": "Birthday Parties",
+      "img": "https://example.com/picnic.jpg",
+      "details": "Enjoy a fun-filled day with friends and family at our community picnic event.",
+      "price": 0.00
+    },
+    {
+      "id": 3,
+      "title": "Commemorative Date",
+      "img": "https://example.com/networking.jpg",
+      "details": "Connect with professionals from various industries at our networking mixer.",
+      "price": 25.00
+    },
+    {
+      "id": 4,
+      "title": "Engagement Parties",
+      "img": "https://example.com/concert.jpg",
+      "details": "Experience live music and great food at our outdoor concert in the park.",
+      "price": 20.00
+    },
+    {
+      "id": 5,
+      "title": "Retirement Parties",
+      "img": "https://example.com/art.jpg",
+      "details": "Explore the world of art at the grand opening of our new exhibition.",
+      "price": 15.00
+    },
+    {
+      "id": 6,
+      "title": "Baby Shower",
+      "img": "https://example.com/festival.jpg",
+      "details": "Celebrate diversity and culture at our annual cultural festival event.",
+      "price": 10.00
+    },
+    {
+      "id": 7,
+      "title": "Housewarming Party",
+      "img": "https://example.com/picnic.jpg",
+      "details": "Enjoy a fun-filled day with friends and family at our community picnic event.",
+      "price": 0.00
+    },
+    {
+      "id": 8,
+      "title": "Themed Dinner",
+      "img": "https://example.com/networking.jpg",
+      "details": "Connect with professionals from various industries at our networking mixer.",
+      "price": 25.00
+    },
+    {
+      "id": 9,
+      "title": "Holiday Parties",
+      "img": "https://example.com/concert.jpg",
+      "details": "Experience live music and great food at our outdoor concert in the park.",
+      "price": 20.00
+    }
+  ]
+  
