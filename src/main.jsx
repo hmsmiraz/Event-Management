@@ -10,6 +10,8 @@ import Premium from './Pages/Premium';
 import Profile from './Pages/Profile';
 import Contact from './Components/Contact';
 import ServicesAll from './Pages/ServicesAll';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +45,14 @@ const router = createBrowserRouter([
         path : "/profile",
         element : <Profile></Profile>,
       },
+      {
+        path: '/login',
+        element: <Login></Login>
+    }, 
+    {
+        path: '/register',
+        element: <Register></Register>
+    }
     ]
   },
 ]);
