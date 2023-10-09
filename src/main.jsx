@@ -12,11 +12,15 @@ import Contact from './Components/Contact';
 import ServicesAll from './Pages/ServicesAll';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
+import PrivateRoutes from './Routes/PrivateRoutes';
+import AuthProviders from './Providers/AuthProviders';
+import ErrorPage from './Pages/ErrorPage/Error';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children : [
       {
         path : "/",
@@ -34,16 +38,16 @@ const router = createBrowserRouter([
       },
       {
         path : "/services/:id",
-        element : <Services></Services>,
+        element : <PrivateRoutes><Services></Services></PrivateRoutes>,
         loader: () => fetch('/services.json')
       },
       {
         path : "/premium",
-        element : <Premium></Premium>,
+        element : <PrivateRoutes><Premium></Premium></PrivateRoutes>,
       },
       {
         path : "/profile",
-        element : <Profile></Profile>,
+        element : <PrivateRoutes><Profile></Profile></PrivateRoutes>,
       },
       {
         path: '/login',
@@ -59,6 +63,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AuthProviders>
     <RouterProvider router={router} />
+    </AuthProviders>
   </React.StrictMode>,
 )

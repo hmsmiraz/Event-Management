@@ -1,14 +1,54 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Shared/Navbar";
+import { useContext, useState } from "react";
+import { AuthContext } from "../Providers/AuthProviders";
+import swal from "sweetalert";
 
 const Login = () => {
+    const [loginError, setLoginError] = useState("");
+    const [success, setSuccess] = useState("");
+
+  const { signIn, signInGoogle } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+//   console.log("location in the login page", location);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    console.log(e.currentTarget);
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+    console.log(email, password);
+    signIn(email, password)
+      .then((result) => {
+        console.log(result.user);
+        swal("Login Successfully");
+        // navigate after login
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.error(error);
+        swal.fire("Please Try Again!");
+      });
+  };
+  const handleGoogleLogin = () =>{
+    signInGoogle()
+    .then((result)=>{
+        console.log(result)
+        swal("Login Successfully");
+    })
+    .catch((error)=>{
+        console.log(error);
+        swal.fire("Please Try Again!");
+    })
+  }
   return (
     <div>
       <Navbar></Navbar>
       <div>
         <h2 className="text-3xl my-10 text-center">Please Login</h2>
-        {/* onSubmit={handleLogin} */}
-        <form className=" md:w-3/4 lg:w-1/2 mx-auto">
+        <form onSubmit={handleLogin} className=" md:w-3/4 lg:w-1/2 mx-auto">
           <div className="form-control">
             <label className="label">
               <span className="label-text">Email</span>
@@ -47,6 +87,9 @@ const Login = () => {
           <Link className="text-blue-600 font-bold" to="/register">
             Register
           </Link>
+        </p>
+        <p className="text-center my-2">
+          <button onClick={handleGoogleLogin} className="btn btn-primary">Google</button>
         </p>
       </div>
     </div>
