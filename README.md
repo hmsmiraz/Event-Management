@@ -3,6 +3,8 @@
 
 
 Answer:
+
+
 -1.A: {}
 -Descriptin: The output will be an empty object {}. We are declared a variable called "greeting" but then assigned an empty object to a variable called "greetign" (with a typo). 
 
