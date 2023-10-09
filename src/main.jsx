@@ -4,7 +4,6 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainLayout from './Layout/MainLayout';
 import Home from './Pages/Home';
-// import ServiceCard from './Pages/ServiceCard';
 import Services from './Pages/ServiceDetails/Services';
 import Premium from './Pages/Premium';
 import Profile from './Pages/Profile';

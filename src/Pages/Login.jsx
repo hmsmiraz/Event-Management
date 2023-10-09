@@ -1,12 +1,10 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Shared/Navbar";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
 import swal from "sweetalert";
 
 const Login = () => {
-    const [loginError, setLoginError] = useState("");
-    const [success, setSuccess] = useState("");
 
   const { signIn, signInGoogle } = useContext(AuthContext);
   const location = useLocation();
@@ -24,12 +22,13 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         swal("Login Successfully");
+        window.location.reload();
         // navigate after login
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.error(error);
-        swal.fire("Please Try Again!");
+        swal.fire("Please Try Again! Check email and password");
       });
   };
   const handleGoogleLogin = () =>{
