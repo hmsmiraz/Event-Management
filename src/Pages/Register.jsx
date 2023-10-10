@@ -50,7 +50,6 @@ const Register = () => {
           photoURL: photo,
         })
           .then(() => {
-            window.location.reload();
             console.log("updated");
             swal("Login Successfully");
           })
@@ -59,9 +58,11 @@ const Register = () => {
             setRegisterError(error.message);
           });
         navigate(location?.state ? location.state : "/");
+        // window.location.reload();
       })
       .catch((error) => {
         console.error(error);
+        swal("Email already Use or Check password");
       });
   };
   return (

@@ -5,11 +5,10 @@ import { AuthContext } from "../Providers/AuthProviders";
 import swal from "sweetalert";
 
 const Login = () => {
-
   const { signIn, signInGoogle } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
-//   console.log("location in the login page", location);
+  //   console.log("location in the login page", location);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -22,26 +21,26 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         swal("Login Successfully");
-        window.location.reload();
-        // navigate after login
         navigate(location?.state ? location.state : "/");
+        
       })
       .catch((error) => {
         console.error(error);
-        swal.fire("Please Try Again! Check email and password");
+        swal("Please Try Again! Check email and password");
       });
   };
-  const handleGoogleLogin = () =>{
+  const handleGoogleLogin = () => {
     signInGoogle()
-    .then((result)=>{
-        console.log(result)
+      .then((result) => {
+        console.log(result);
         swal("Login Successfully");
-    })
-    .catch((error)=>{
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
         console.log(error);
-        swal.fire("Please Try Again!");
-    })
-  }
+        swal("Please Try Again!");
+      });
+  };
   return (
     <div>
       <Navbar></Navbar>
@@ -88,7 +87,9 @@ const Login = () => {
           </Link>
         </p>
         <p className="text-center my-2">
-          <button onClick={handleGoogleLogin} className="btn btn-primary">Google</button>
+          <button onClick={handleGoogleLogin} className="btn btn-primary">
+            Google
+          </button>
         </p>
       </div>
     </div>
