@@ -24,4 +24,4 @@ Answer:
 -5. C: 3
 -Discription:  We have an array called nums containing numbers from 0 to 3, and you want to count how many of those numbers are truthy. You use the forEach method to iterate over the elements of the nums array and increment the count variable. There are three truthy elements in the nums array (1, 2, and 3), the count variable will be incremented three times. Therefore, when you log count to the console, it will output is 3.
 
-- [Live link: ](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) 
+- [Live link](https://65252653e1017403344e8aa3--unique-creponne-4c082a.netlify.app/) 
